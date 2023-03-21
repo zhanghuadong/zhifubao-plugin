@@ -1,0 +1,45 @@
+{
+  "name": "下载支付宝保证金明细",
+  "description": "下载支付宝保证金明细-张华东版本",
+  "version": "1.0",
+  "manifest_version": 2,
+  "icons":
+  {
+    "128": "img/icon.png"
+  },
+  "browser_action": {
+    "default_icon":"img/icon.png",
+    "default_title":"下载支付宝保证金明细",
+    "default_popup": "/html/popup/popup.html"
+  },
+  "permissions":
+  [
+    "cookies", //这行必不可少
+    "contextMenus", 
+    "tabs", 
+    "notifications", 
+    "webRequest", 
+    "webRequestBlocking",
+    "storage",
+    "*://b.alipay.com/*", 
+    "*://www.zhipin.com/*", 
+     "*://mbillexprod.alipay.com/*",
+    "*://*.erp321.com/*",
+    "*://w.erp321.com/*",
+    "https://w.erp321.com/*",
+    "https://erp321.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://www.zhipin.com/*","*://mbillexprod.alipay.com/*","*://b.alipay.com/*"],
+      "js": ["/js/content/page.js", "/js/content/install.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    "/js/inject/pikazExcel.js",
+    "/js/inject/page.js",
+    "/js/inject/network.js",
+    "/js/inject/jquery-1.11.3.min.js"
+  ]
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="main.css" />
+    <style>
+      #box {
+        align-items: center;
+      }
+      #input-box {
+        display: flex;
+        align-items: center;
+      }
+      .label {
+        white-space: nowrap;
+      }
+      #btn-box {
+        padding-left: 50px;
+        padding-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box">
+      <div id="input-box">
+        <span class="label">文件名：</span>
+        <input id="filename" type="text" placeholder="可选，默认为当前时间" />
+      </div>
+      <!-- <div id="btn-box">
+        <button id="export-btn">导出数据</button>
+      </div> -->
+      <div class="wrap">
+            <h1>支付宝账号保证金抓取工具&nbsp;&nbsp;&nbsp;</h1>
+            <!-- <a href="###" target="_blank" style="font-size:14px;">新窗口打开</a> -->
+            <!-- <button id="btn">抓取保证金明细数据</button> -->
+           <!--  <button id="removeall">清除所有数据</button> -->
+            <button id="export-btn">导出数据</button>
+            <a href="###" target="_blank" class="filelink">prolist.xls</a>
+            <p id="message"></p>
+            <table>
+                <thead>
+                    <tr>
+                        <td>资产变动时间</td>
+                        <td>保证金明细流水号</td>
+                        <td>业务订单号</td>
+                        <td>发生金额(元)</td>
+                        <td>保证金类型</td>
+                        <td>余额(元)</td>
+                        <td>业务描述</td>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+    <script src="/html/popup/popup.js"></script>
+  </body>
+</html>
